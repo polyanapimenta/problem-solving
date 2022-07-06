@@ -2,6 +2,7 @@ import { encode } from "./encode/encode";
 import { decode } from "./decode/decode";
 import { leftRotation } from "./leftRotation/leftRotation";
 import { array2d } from "./array2d/array2d";
+import { compiler } from "./compiler/compiler";
 
 const readline = require('readline').createInterface({
   input: process.stdin,
@@ -14,6 +15,7 @@ readline.question(`
   \n2 - Decode
   \n3 - Left Rotation
   \n4 - 2D Array
+  \n5 - Compiler
   `, (opcao: any) => {
   
   console.log(`Opção escolhida: '${opcao}'`);
@@ -48,6 +50,11 @@ readline.question(`
       ];
       console.log(`\ninput: ${input}\n`);
       console.log(array2d(input));
+      break;
+    case '5':
+      input = "{{{[[[(]]]}}}";
+      console.log(`\ninput: ${input}\n`);
+      console.log(compiler(input));
       break;
     default:
       console.log("\nOpção Invalida!");
